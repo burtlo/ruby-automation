@@ -68,22 +68,26 @@ system.
 
 ## 06 - Rake with Parameters
 
-We want to interact with our scripts through: command-line input; command-line parameters; environment variables; and files.
+We want to interact with our scripts through parameters.
 
 * Rake parameters
-* ARGV
-* Ruby Core: Array
 
 ## 07 - Rake with Environment Variables
+
+We want to interact with our scripts through environment variables.
+
+* ENV
+* Ruby Core: Hash
+
+## 08 - Some Additional File Utilities
 
 Lets finish up our rake requirements by looking at pulling in data from
 our environment variables and additional information from files.
 
-* ENV
-* Ruby Core: Hash
-* Ruby Core: File.open, File.read
+* Ruby Core: File.open, File.read, File.extname
+* Dir globs
 
-## 08 - Bonus
+## 09 - Command-Line UX/UI
 
 Let's finish our first day of tools creation with some gems that will make our
 life easier when making command-line tools by generating a better looking
@@ -99,8 +103,8 @@ ourselves that provide better feedback or provide more interaction.
 ### Resources
 
 * http://jasonseifer.com/2010/04/06/rake-tutorial
-http://mentalized.net/journal/2010/03/08/5_ways_to_run_commands_from_ruby/
-http://stackoverflow.com/questions/825748/how-do-i-pass-command-line-arguments-to-a-rake-task
+* http://mentalized.net/journal/2010/03/08/5_ways_to_run_commands_from_ruby/
+* http://stackoverflow.com/questions/825748/how-do-i-pass-command-line-arguments-to-a-rake-task
 * https://github.com/guard/guard
 * https://github.com/guard/guard-shell
 * https://github.com/guard/guard-livereload
@@ -111,4 +115,4 @@ http://stackoverflow.com/questions/825748/how-do-i-pass-command-line-arguments-t
 * http://rubular.com/
 * http://rubydoc.info/stdlib/fileutils/frames
 * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-* Dir.globs
+* ARGV (accepting parameters to a script outside of Rake)
