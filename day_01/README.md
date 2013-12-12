@@ -30,13 +30,22 @@ the presence of the file and the ext name of the file. We also want to find
 all files that match the specified file path type and if the path exists. If
 intended sources or destinations don't exist we'll make them
 
-* default command `task :default => :task_name`
-* Task dependency
+* Task Dependency
+* Invoking Tasks
+* Task Namespaces
+* Default Task
+
+## 03 - Core File Operations
+
+We can use backticks to get quite a bit done. However, there are utilities
+within Ruby that allow us to do a lot of file and directory checking.
+
+* if
 * Ruby Core: File - exists?, file?, dir?, basename? extname?
 * Ruby Core: Dir - exists?, Globs [**/*.zip]
 * FileUtils to make our directories and do our dirty work: `cp`, `mkdir_p`
 
-## 03 - Guard
+## 04 - Guard
 
 Now that we have our task in place, it is cumbersome to have to execute it
 manually. Using guard we can define a Guardfile have the code execute when any
@@ -47,7 +56,7 @@ new file is added to our folder.
 * Guard syntax: `guard`, `watch`
 * Crash Course: Regular Expressions
 
-## 04 - Bundler
+## 05 - Bundler
 
 Our test tools now have some dependencies so we want to track those dependencies
 and make it easier for us to install the components we need when we go to a new
@@ -57,7 +66,7 @@ system.
 * bundle commands: `install`, `update`, `check`
 * Gemfile and Gemfile.lock
 
-## 05 - Rake with Parameters
+## 06 - Rake with Parameters
 
 We want to interact with our scripts through: command-line input; command-line parameters; environment variables; and files.
 
@@ -65,7 +74,7 @@ We want to interact with our scripts through: command-line input; command-line p
 * ARGV
 * Ruby Core: Array
 
-## 06 - Rake with Environment Variables
+## 07 - Rake with Environment Variables
 
 Lets finish up our rake requirements by looking at pulling in data from
 our environment variables and additional information from files.
@@ -74,7 +83,7 @@ our environment variables and additional information from files.
 * Ruby Core: Hash
 * Ruby Core: File.open, File.read
 
-## 07 - Bonus
+## 08 - Bonus
 
 Let's finish our first day of tools creation with some gems that will make our
 life easier when making command-line tools by generating a better looking
@@ -101,4 +110,5 @@ http://stackoverflow.com/questions/825748/how-do-i-pass-command-line-arguments-t
 * http://rubydoc.info/stdlib/core/Kernel:gets
 * http://rubular.com/
 * http://rubydoc.info/stdlib/fileutils/frames
-http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+* http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+* Dir.globs
