@@ -94,7 +94,7 @@ life easier when making command-line tools by generating a better looking
 interface and generating better fake data.
 
 * Highline - `say`, `ask`
-* Terminal Table / Formatador
+* Formatador
 
 Both of these gems make it easier and more interesting to ask for input and
 generate output. This is useful if we wanted to create great tools for
@@ -115,4 +115,3 @@ ourselves that provide better feedback or provide more interaction.
 * http://rubular.com/
 * http://rubydoc.info/stdlib/fileutils/frames
 * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-* ARGV (accepting parameters to a script outside of Rake)

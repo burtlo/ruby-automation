@@ -124,9 +124,9 @@ goodbye
 # Goal
 
 ```
-$ rake copy[images]
-$ rake copy[txt]
-$ rake copy[videos] DESTINATION=/Users/Frank/Desktop/WatchLater
+$ rake downloads:copy[images]
+$ rake downloads:copy[txt]
+$ rake downloads:copy[videos] DESTINATION=/Users/Frank/Desktop/WatchLater
 ```
 
 !SLIDE

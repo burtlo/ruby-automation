@@ -114,9 +114,9 @@ $ rake downloads:txt:show FILE=pets.txt
 Dog
 Cat
 Iguana
-$ rake copy[txt]
+$ rake downloads:copy[txt]
 Copying pets.txt
-Copying house.txt
+Copying houses.txt
 ...
 ```
 

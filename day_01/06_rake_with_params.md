@@ -112,9 +112,9 @@ goodbye
 # Goal
 
 ```
-$ rake copy[images]
-$ rake copy[txt]
-$ rake copy[videos]
+$ rake downloads:copy[images]
+$ rake downloads:copy[txt]
+$ rake downloads:copy[videos]
 ```
 
 !SLIDE
