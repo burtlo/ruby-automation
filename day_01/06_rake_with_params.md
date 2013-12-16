@@ -1,16 +1,16 @@
-!SLIDE
+!SLIDE title
 
 # Rake With Parameters
 
-!SLIDE
+!SLIDE title
 
 Often times our tools need to take inputs that allow us to do a similar
 operation with different parameters. Lets look at providing inputs to our
 rake tasks.
 
-!SLIDE
+!SLIDE title
 
-# Static Introduction
+## Static Introduction
 
 ```ruby
 task "introduction" => [ "greetings:formal" ] do
@@ -26,9 +26,9 @@ Hi My Name is Frank
 goodbye
 ```
 
-!SLIDE
+!SLIDE title
 
-# A Dynamic Introduction
+## A Dynamic Introduction
 
 ```ruby
 task "introduction" => [ "greetings:formal" ] do
@@ -37,19 +37,19 @@ task "introduction" => [ "greetings:formal" ] do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Task Parameters Format
+## Task Parameters Format
 
 ```ruby
-task "TASKNAME", [ "PARAM1", "PARAM2", ... ] => [ "DEPENDENT_TASKNAME2", ... ] do |task,params|
+task "TASKNAME", [ "PARAM1", ... ] => [ "DEPENDENT_TASK1", ... ] do |task,params|
   # ... task related code ...
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# An Example
+## An Example
 
 ```ruby
 task "introduction", [ "name" ] => [ "greetings:formal" ] do |task,params|
@@ -58,20 +58,20 @@ task "introduction", [ "name" ] => [ "greetings:formal" ] do |task,params|
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# How do I get `params.name` into my string?
+## How do I get `params.name` into my string?
 
-!SLIDE
+!SLIDE title
 
-# String Interpolation
+## String Interpolation
 
 It allows us to escape the string briefly to insert most any Ruby code we want
 to insert into the string.
 
-!SLIDE
+!SLIDE title
 
-# Example of Interpolating Strings
+## Example of Interpolating Strings
 
 ```ruby
 puts "1 + 1 = #{1 + 1}"
@@ -79,7 +79,9 @@ name = "Jorge"
 puts "My Name Is #{name}"
 ```
 
-!SLIDE
+!SLIDE title
+
+## Our Task Parameters String Interpolated
 
 ```ruby
 task "introduction", [ "name" ] => [ "greetings:formal" ] do |task,params|
@@ -88,17 +90,17 @@ task "introduction", [ "name" ] => [ "greetings:formal" ] do |task,params|
 end
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# How Do I Use This Parameter?
+## How Do I Use This Parameter?
 
 ```
 $ rake task[PARAM1,...]
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Example of Usage
+## Example Usage
 
 ```
 $ rake introduction[Bilbo]
@@ -107,9 +109,13 @@ Hi My Name is Bilbo
 goodbye
 ```
 
-!SLIDE
+!SLIDE title
 
 # Goal
+
+!SLIDE title commandline
+
+# Add Rake Parameters
 
 ```
 $ rake downloads:copy[images]
@@ -117,6 +123,6 @@ $ rake downloads:copy[txt]
 $ rake downloads:copy[videos]
 ```
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
+## Review and Questions

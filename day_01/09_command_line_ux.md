@@ -1,49 +1,49 @@
-!SLIDE
+!SLIDE title
 
 # Command-Line UX/UI
 
-!SLIDE
+!SLIDE title
 
 A fun, useful aside is to spend some time to make our command tools nicer
 with some additional gems that format data output and provide ways to ask
 for user input.
 
-!SLIDE
+!SLIDE title
 
-# Formatador
+## Formatador
 
 This gem provides a simple way to output data in a tabular format.
 Bonus: it is also easy to color to your ouput.
 
-!SLIDE
+!SLIDE title
 
-# Add a Dependency to the Gemfile
+## Add a Dependency to the Gemfile
 
-```
+```ruby
 gem 'formatador'
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Install Our Dependencies
+## Install Our Dependencies
 
 ```
 $ bundle check
 $ bundle install
 ```
 
-!SLIDE
+!SLIDE title
 
-# Update Our Rakefile
+## Update Our Rakefile
 
 ```ruby
 require 'fileutils'
 require 'formatador'
 ```
 
-!SLIDE
+!SLIDE title
 
-# Sample Output
+## Sample Output
 
 ```ruby
 table_data = [ { "name" => "Frank" }, { "name" => "Katrina" } ]
@@ -62,31 +62,31 @@ $ rake -T
 ...
 ```
 
-!SLIDE
+!SLIDE title
 
-# Table Data
+## Table Data
 
 ```ruby
 [ { "name" => "Frank" }, { "name" => "Katrina" } ]
 ```
 
-The following data is an array of hashes!
+The following data is an **array of hashes**!
 
-!SLIDE
+!SLIDE title
 
-# Arrays
+## Arrays
 
 ```ruby
 [ 1, 2, 3, 4 ]
 [ 1, "two", 3.0, { "number" => 4 } ]
 ```
 
-Ruby arrays can contain any types of values that you want, though they
+Ruby **arrays can contain any types** of values that you want, though they
 usually contain the same type of thing.
 
-!SLIDE
+!SLIDE title
 
-# Hashes
+## Hashes
 
 ```ruby
 # { KEY => VALUE }
@@ -94,11 +94,11 @@ usually contain the same type of thing.
 ```
 
 Remember, ENV is a hash, we are simply defining a Hash here. When you define
-a Hash you need to specify the key with the corresponding value.
+a Hash you need to **specify the key with the corresponding value**.
 
-!SLIDE
+!SLIDE title commandline
 
-# Creating a Table With Real Data
+## Creating a Table With Real Data
 
 ```
 $ rake downloads:txt:list
@@ -111,7 +111,7 @@ $ rake downloads:txt:list
   +------------+------+
 ```
 
-!SLIDE
+!SLIDE text-size-90
 
 # Breaking Down the Problem
 
@@ -121,36 +121,34 @@ $ rake downloads:txt:list
 * Then place each file hash into an array
 * Display the content in a table
 
-!SLIDE
+!SLIDE text-size-90
 
-# Create or Find the Rake Task
-
-## Looking for:
+## Create or Find the Rake Task
 
 * A task named "downloads:txt:list"
 * A namespace "downloads" with a task named "txt:list"
 * A namespace "downloads", with a namespace "txt", with a task named "list"
 
-!SLIDE
+!SLIDE title
 
-# Find all the files end with **txt**
+## Find all the files end with **txt**
 
 ```ruby
 Dir.glob["/Users/frank/Downloads/*.txt"]
 Dir["/Users/frank/Downloads/*.txt"]
 ```
 
-!SLIDE
+!SLIDE title
 
-# Determine their File Size
+## Determine their File Size
 
 ```ruby
 File.size("FILEPATH")
 ```
 
-!SLIDE
+!SLIDE title
 
-# File Size for Each File
+## File Size for Each File
 
 ```ruby
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
@@ -160,9 +158,9 @@ end
 
 But we need to save this data in a hash!
 
-!SLIDE
+!SLIDE title
 
-# Place all that file data into a hash
+## Place all that file data into a hash
 
 ```ruby
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
@@ -172,9 +170,9 @@ end
 
 The data is now in a hash, but now we need to store it in an Array!
 
-!SLIDE
+!SLIDE title
 
-# Then place each file hash into an array
+## Then place each file hash into an array
 
 ```ruby
 file_data = []
@@ -187,17 +185,17 @@ end
 
 Now the `file_data` array has all info for every file
 
-!SLIDE
+!SLIDE title
 
-# Display the content in a table
+## Display the content in a table
 
 ```ruby
 Formatador.display_table(file_data)
 ```
 
-!SLIDE
+!SLIDE title
 
-# rake downloads:txt:list
+## rake downloads:txt:list
 
 ```ruby
 file_data = []
@@ -210,41 +208,41 @@ end
 Formatador.display_table(file_data)
 ```
 
-!SLIDE
+!SLIDE title
 
-# Asking for Input
+## Asking for Input
 
 Up until this point we have relied on parameters and environment varibles
 to give us the variables we needed to respond. Sometimes it is useful to
 **ask the user for input**. Saving them from having to remember various
 parameters.
 
-!SLIDE
+!SLIDE title
 
-# Highline
+## Highline
 
 HighLine was designed to ease the tedious tasks of doing console input and output with low-level methods like gets() and puts()
 
-!SLIDE
+!SLIDE title
 
-# Add a Dependency to the Gemfile
+## Add a Dependency to the Gemfile
 
-```
+```ruby
 gem 'highline'
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Install Our Dependencies
+## Install Our Dependencies
 
 ```
 $ bundle check
 $ bundle install
 ```
 
-!SLIDE
+!SLIDE title
 
-# Update Our Rakefile
+## Update Our Rakefile
 
 ```ruby
 require 'fileutils'
@@ -255,9 +253,9 @@ require 'highline/import'
 This gem uses a non-standard approach when it comes to using it in your
 project.
 
-!SLIDE
+!SLIDE title
 
-# Sample Question
+## Sample Question
 
 ```ruby
 favorite_color = ask("What is your favorite color?")
@@ -271,9 +269,9 @@ blue<ENTER>
 Your favorite color is blue.
 ```
 
-!SLIDE
+!SLIDE title
 
-# Sample Question with Default
+## Sample Question with Default
 
 ```ruby
 cups_of_coffee = ask("How many cups of coffee do you drink?") do |question|
@@ -289,9 +287,9 @@ How many cups of coffee do you drink?  |2|
 You really drink 2 cups of coffee?
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Asking for a Download Location
+## Asking for a Download Location
 
 ```
 $ rake downloads:copy[txt]
@@ -301,7 +299,7 @@ Copying pets.txt to /Users/frank/Desktop/ReadLater
 Copying houses.txt to /Users/frank/Desktop/ReadLater
 ```
 
-!SLIDE
+!SLIDE text-size-90
 
 # Breaking Down the Problem
 
@@ -310,18 +308,16 @@ Copying houses.txt to /Users/frank/Desktop/ReadLater
 * If yes, use that destination
 * If no, then lets ask the user for a destination
 
-!SLIDE
+!SLIDE title text-size-90
 
-# Create or Find the Rake Task
-
-## Looking for:
+## Create or Find the Rake Task
 
 * A task named "downloads:copy"
 * A namespace "downloads" with a task named "copy"
 
-!SLIDE
+!SLIDE title
 
-# Have they already specified a destination?
+## Have they already specified a destination?
 
 ```ruby
 destination = ENV['DESTINATION']
@@ -335,9 +331,9 @@ end
 # ... copying code ...
 ```
 
-!SLIDE
+!SLIDE title
 
-# No Destination Specified
+## No Destination Specified
 
 ```ruby
 destination = ENV['DESTINATION']
@@ -349,9 +345,9 @@ end
 # ... copying code ...
 ```
 
-!SLIDE
+!SLIDE title
 
-# Asking for a destination
+## Asking for a destination
 
 ```ruby
 destination = ENV['DESTINATION']
@@ -363,9 +359,9 @@ end
 # ... copying code ...
 ```
 
-!SLIDE
+!SLIDE title
 
-# Asking for a destination with Default
+## Asking for a destination with Default
 
 ```ruby
 destination = ENV['DESTINATION']
@@ -379,9 +375,11 @@ end
 # ... copying code ...
 ```
 
-!SLIDE
+!SLIDE title
 
 # Goal
+
+!SLIDE commandline
 
 ```
 $ rake downloads:txt:list
@@ -410,11 +408,6 @@ Copying pets.txt to /Users/frank/Desktop/ReadLater
 Copying houses.txt to /Users/frank/Desktop/ReadLater
 ```
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
-
-!SLIDE
-
-* https://github.com/JEG2/highline
-* https://github.com/geemus/formatador
+## Review and Questions

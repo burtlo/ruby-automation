@@ -1,23 +1,23 @@
-!SLIDE
+!SLIDE title
 
 # Rake With Environment Variables
 
-!SLIDE
+!SLIDE title
 
 Often times our tools need to take inputs that allow us to do a similar
 operation with different parameters. Lets look at providing inputs to our
 rake tasks.
 
-!SLIDE
+!SLIDE title commandline
 
-# The "Real Talk" about Rake Parameters
+## The "Real Talk" about Rake Parameters
 
 Not many people use rake parameters and most people do not know them. People
 often use **environment variables** as parameters.
 
-!SLIDE
+!SLIDE title
 
-# Imagine You Wanted ...
+## Imagine You Wanted ...
 
 ```
 Good Morning
@@ -31,9 +31,9 @@ Hi My Name is Bilbo
 goodbye
 ```
 
-!SLIDE
+!SLIDE title
 
-# Add the Parameter to the Original Task
+## Add the Parameter to the Original Task
 
 ```ruby
 task "introduction", ["name","time_of_day"] => [ "greetings:formal" ] do |task,params|
@@ -42,9 +42,9 @@ task "introduction", ["name","time_of_day"] => [ "greetings:formal" ] do |task,p
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Also Update the Dependent Task as Well
+## Also Update the Dependent Task as Well
 
 ```ruby
 namespace "greetings" do
@@ -60,33 +60,35 @@ namespace "greetings" do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Instead Use Environment Variables
+## Instead Use Environment Variables
 
 This is what the majority of rake tools use to pass data from the command-line
 to scripts.
 
-!SLIDE
+!SLIDE title
 
-# How do I get the value of environment variables?
+## How do I get the value of environment variables?
 
-!SLIDE
+!SLIDE title
 
-# Ruby defines ENV
+## Ruby defines ENV
 
 **ENV** is a *global* Hash available within Ruby scripts.
 
-!SLIDE
+!SLIDE title
 
-# Example of Accessing ENV Variables
+## Example of Accessing ENV Variables
 
 ```ruby
 puts ENV["HOME"]        # => "/Users/burtlo"
 puts ENV["UNDEFINED KEY"] # => ""
 ```
 
-!SLIDE
+!SLIDE title
+
+## Our Task Using ENV
 
 ```ruby
 namespace "greetings" do
@@ -100,17 +102,17 @@ namespace "greetings" do
 end
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# How Do I Specify an ENV Varaiable?
+## How Do I Specify an ENV Varaiable?
 
 ```
 $ rake task[PARAM1,...] VARIABLE=VALUE
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Example of Usage
+## Example Usage
 
 ```
 $ rake introduction[Bilbo] TIME_OF_DAY=Morning
@@ -119,9 +121,13 @@ Hi My Name is Bilbo
 goodbye
 ```
 
-!SLIDE
+!SLIDE title
 
 # Goal
+
+!SLIDE
+
+# Add ENV["DESTINATION"]
 
 ```
 $ rake downloads:copy[images]
@@ -129,6 +135,6 @@ $ rake downloads:copy[txt]
 $ rake downloads:copy[videos] DESTINATION=/Users/Frank/Desktop/WatchLater
 ```
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
+## Review and Questions

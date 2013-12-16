@@ -1,19 +1,18 @@
-!SLIDE
+!SLIDE title
 
 # Section More Rake
 
 !SLIDE
 
-* Dependent Tasks
-* Invoking Tasks
-* Default Task
-* Namespaces
-
-# A New Task
+## A New Task
 
 * Says Hello
 * Gives Our Name
 * Says Goodbye
+
+!SLIDE title
+
+## Something like ...
 
 ```ruby
 task "introduction" do
@@ -23,9 +22,9 @@ task "introduction" do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Repetition of Our Existing Tasks
+## Repetition of Our Existing Tasks
 
 ```ruby
 task "hello" do
@@ -37,9 +36,9 @@ task "goodbye" do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Dependent Task
+## Dependent Task
 
 ```ruby
 task "introduction" => [ "hello", "goodbye" ] do
@@ -47,9 +46,9 @@ task "introduction" => [ "hello", "goodbye" ] do
 end
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Uh Oh ... Almost
+## Uh Oh ... Almost
 
 ```
 $ rake introduction
@@ -58,9 +57,9 @@ goodbye
 Hi My Name is ...
 ```
 
-!SLIDE
+!SLIDE title
 
-# Invoking A Task
+## Invoking A Task
 
 ```ruby
 task "introduction" => [ "hello" ] do
@@ -69,9 +68,9 @@ task "introduction" => [ "hello" ] do
 end
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Much Better
+## Much Better
 
 ```
 $ rake introduction
@@ -80,9 +79,9 @@ Hi My Name is ...
 goodbye
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Default Operation
+## Default Operation
 
 ```
 $ rake
@@ -90,17 +89,17 @@ rake aborted!
 Don't know how to build task 'default'
 ```
 
-!SLIDE
+!SLIDE title
 
-# Setting a Default
+## Setting a Default
 
 ```ruby
 task "default" => [ "introduction" ]
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Nice!
+## Nice!
 
 ```
 $ rake
@@ -109,17 +108,17 @@ Hi My Name is ...
 goodbye
 ```
 
-!SLIDE
+!SLIDE title
 
-# Grouping our Tasks
+## Grouping our Tasks
 
 It is possible that we may be overrun with complexity. We may start to add
 several different kinds of greetings and goodbyes. It would be great to
 logically group them.
 
-!SLIDE
+!SLIDE title
 
-# Namespaces
+## Namespaces
 
 ```ruby
 namespace "NAMESPACE-NAME" do
@@ -129,9 +128,9 @@ namespace "NAMESPACE-NAME" do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Kinds of Greetings
+## Kinds of Greetings
 
 ```ruby
 namespace "greetings" do
@@ -148,9 +147,9 @@ namespace "greetings" do
 end
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# rake namespace:task
+## rake namespace:task
 
 ```
 $ rake -T
@@ -163,11 +162,11 @@ $ rake greetings:familar
 yo
 ```
 
-!SLIDE
+!SLIDE title
 
 # Goal
 
-!SLIDE
+!SLIDE commandline
 
 # Create More Rake Tasks
 
@@ -189,6 +188,6 @@ AnotherDocument.txt
 Moving all text files (.txt) to the Desktop
 ```
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
+## Review and Questions

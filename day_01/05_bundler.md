@@ -1,41 +1,42 @@
-!SLIDE
+!SLIDE title
 
-# Managing Dependencies With Bundler
+# Managing Dependencies
+With Bundler
 
-!SLIDE
+!SLIDE title
 
 Sharing this code we have created now comes with the additional instructions
-that you must first install **guard-shell** if you want to use it. Later if we
-add more dependencies we would have more to install.
+that you must first install **guard-shell** if you want to use it. **Later if we
+add more dependencies we would have more to install.**
 
-!SLIDE
+!SLIDE title commandline
 
-# Bundler
+## Bundler
 
 ```
 $ gem install bundler
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# We Need a Gemfile
+## We Need a Gemfile
 
 ```
-touch Gemfile
+$ touch Gemfile
 ```
 
-!SLIDE
+!SLIDE title
 
-# Setting a Source
+## Setting a Source
 
 ```ruby
 source "https://rubygems.org"
 # source "http://internal-server.ourcompany.it"
 ```
 
-!SLIDE
+!SLIDE title
 
-# Adding our Gems
+## Adding our Gems
 
 ```ruby
 source "https://rubygems.org"
@@ -44,9 +45,9 @@ source "https://rubygems.org"
 gem "guard-shell"
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Checking Our Dependencies
+## Checking Our Dependencies
 
 ```
 $ bundle check
@@ -54,9 +55,9 @@ Resolving dependencies...
 The Gemfile's dependencies are satisfied
 ```
 
-!SLIDE
+!SLIDE commandline
 
-# Installing Needed Dependencies
+## Installing Needed Dependencies
 
 ```
 $ bundle install
@@ -82,7 +83,7 @@ Use `bundle show [gemname]` to see where a bundled gem is installed.
 
 !SLIDE
 
-# What is Gemfile.lock?
+## What is Gemfile.lock?
 
 ```
 GEM
@@ -96,31 +97,24 @@ GEM
     guard (2.2.4)
       formatador (>= 0.2.4)
       listen (~> 2.1)
-      lumberjack (~> 1.0)
-      pry (>= 0.9.12)
-      thor (>= 0.18.1)
-```
-
-!SLIDE
-
-# More about the Gemfile.lock?
-
-```
+      ...
     ...
-    slop (3.4.5)
-    thor (0.18.1)
-    timers (1.1.0)
 
-PLATFORMS
-  ruby
+  PLATFORMS
+    ruby
 
-DEPENDENCIES
-  guard-shell
+  DEPENDENCIES
+    guard-shell
+
 ```
 
-!SLIDE
+!SLIDE title
 
 # Goal
+
+!SLIDE commandline
+
+# Setup a Gemfile
 
 ```
 $ ls
@@ -131,12 +125,6 @@ Resolving dependencies...
 The Gemfile's dependencies are satisfied
 ```
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
-
-!SLIDE
-
-# More Information
-
-http://bundler.io/
+## Review and Questions

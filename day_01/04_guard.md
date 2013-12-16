@@ -1,20 +1,20 @@
-!SLIDE
+!SLIDE title
 
 # Guard
 
 Reacting to changes on your file system
 
-!SLIDE
+!SLIDE title
 
-# Gems
+## Gems
 
 At this point we have used everything that comes standard with Ruby. This is the
 first time we are going to download an additional tool from the internet. Ruby
 comes equipped with a tool that allows us to download libraries from the command-line.
 
-!SLIDE
+!SLIDE title commandline
 
-# Gem
+## Gem
 
 ```
 $ gem -v
@@ -22,25 +22,25 @@ $ gem -v
 $ gem help
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# List All Installed Gems
+## List All Installed Gems
 
 ```
 $ gem list
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Installing a New Gem
+## Installing a New Gem
 
 ```
 $ gem install GEMNAME
 ```
 
-!SLIDE
+!SLIDE commandline
 
-# Installing the Guard-Shell Gem
+## Installing the Guard-Shell Gem
 
 ```
 $ gem install guard-shell
@@ -61,17 +61,17 @@ Successfully installed guard-shell-0.5.2
 7 gems installed
 ```
 
-!SLIDE
+!SLIDE title commandline
 
-# Setting Up Guard
+## Setting Up Guard
 
 ```
 $ guard init shell
 ```
 
-!SLIDE
+!SLIDE title
 
-# Guardfile
+## Guardfile
 
 ```ruby
 # Add files and commands to this file, like the example:
@@ -82,18 +82,18 @@ guard :shell do
 end
 ```
 
-!SLIDE
+!SLIDE title
 
-# Uh Oh! Regular Expressions
+## Uh Oh! Regular Expressions
 
 ```ruby
 lame_regex = /I am a Regular Expression/
 another_lame_regex = %r{I am a Regular Expression}
 ```
 
-!SLIDE
+!SLIDE title
 
-# Specifying a File Matcher
+## Specifying a File Matcher
 
 ```ruby
 all_text_files = %r{/Users/frank/Downloads/.+\.txt}
@@ -102,22 +102,23 @@ most_jpg_files = %r{/Users/frank/Downloads/.+\.jpg}
 all_png_files = %r{/Users/frank/Downloads/.+\.png}
 all_image_files = %r{/Users/frank/Downloads/.+\.(gif|jpg|png)}
 ```
-!SLIDE
+!SLIDE title
 
-# Rubular
+## Rubular
 
-rubular.com
+http://rubular.com
 
-!SLIDE
+!SLIDE title
 
-# Putting it All Together
+## Putting it All Together
 
 ```ruby
 guard :shell do
   watch(%r{/Users/frank/Downloads/.+\.txt}) {|m| `rake downloads:txt:copy` }
 end
 ```
-!SLIDE
+
+!SLIDE title
 
 # Goal
 
@@ -130,6 +131,6 @@ end
 * Whenever you create a text file, movie file, and image file the
   appropriate rake action to copy the files is executed.
 
-!SLIDE
+!SLIDE title
 
-# Review and Questions
+## Review and Questions
