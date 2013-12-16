@@ -3,7 +3,7 @@
 We want to build on the tools that we created yesterday, extending them to
 talk to various file formats and start to use different sources and services for them.
 
-## Parsing YAML files
+## 01 - Parsing YAML files
 
 A common format to store data is in YAML. Let's store some configuration for
 where certain files of certain types should be stored.
@@ -12,7 +12,7 @@ where certain files of certain types should be stored.
 * require 'yaml'
 * File loading raw contents and parsing it with YAML::Load
 
-## Parsing and Outputing JSON data
+## 02 - Parsing and Outputing JSON data
 
 We want to parse some data that we have received and output some of that data
 to the screen. Let's add a rake task that will show us all the names of the
@@ -22,18 +22,18 @@ Pokemon and their type information.
 * File loading raw contents and parsing it with JSON
 * Talk about alternative JSON implementations
 
-## Parsing and Outputing CSV data
+## 03 - Parsing and Outputing CSV data
 
 * Various CSV methods
 * Reminder that CSV rewind is required
 
-## Parsing XML with Nokogiri
+## 04 - Parsing XML with Nokogiri
 
 * Loading and Parsing XML
 * finding children
 * A quick introduction to XPATH
 
-## Sinatra
+## 05 - Sinatra
 
 Using Sinatra we can create simple interfaces that allow us to mock up existing
 services. So we will solve the same problem we just solved but solve it again
@@ -45,7 +45,7 @@ through API endpoints
 * Running and viewing the server `ruby server.rb`
 * Setting up support for new paths for our data examples
 
-## Faraday and HTTParty
+## 06 - HTTP Clients
 
 Using Sinatra we can create simple interfaces that allow us to mock up existing
 services. So we will solve the same problem we just solved but solve it again
@@ -54,8 +54,9 @@ through API endpoints
 * Creating a connection
 * Querying a particular URL
 * Reading the repsonse from the body
+* Faraday/HTTParty
 
-## Structs and OpenStructs
+## 07 - Structs and OpenStructs
 
 The data that we have received can get really messy. We want to explore various
 ways that we can structure that data to make it easier for us to manage.
@@ -63,14 +64,14 @@ ways that we can structure that data to make it easier for us to manage.
 * Struct limitations and benefits (speed)
 * OStruct - require 'ostruct', flexibility, and performance impact
 
-# Custom Classes
+# 08 - Custom Classes
 
 The data that we have received can get really messy. We want to explore various
 ways that we can structure that data to make it easier for us to manage.
 
 * Classes - initialize, named parameters, attr_reader, attr_writer, attr_accessor
 
-# Thor: Creating our Own Command Line tool
+# 09 - Thor: Creating our Own Command Line tool
 
 With the remaining time in the day we will create our own command-line client
 tool (when Rake just won't do). That allows us to specify our own custom
@@ -91,3 +92,4 @@ commands and arguments.
 * http://rubydoc.info/stdlib/core/Struct
 * http://rubydoc.info/stdlib/ostruct/frames
 * https://github.com/erikhuda/thor
+* ARGV (accepting parameters to a script outside of Rake)
