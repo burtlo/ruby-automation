@@ -158,7 +158,7 @@ rake greetings:formal    # Good for when saying hi to new people or when talking
 ...
 $ rake greetings:formal
 hello
-$ rake greetings:familar
+$ rake greetings:familiar
 yo
 ```
 

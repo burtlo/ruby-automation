@@ -5,6 +5,7 @@ theme "archetect"
 
 description ""
 
+slides "00_intro.md"
 slides "01_rake.md"
 slides "02_rake.md"
 slides "03_file_operations.md"
@@ -14,26 +15,3 @@ slides "06_rake_with_params.md"
 slides "07_rake_with_env.md"
 slides "08_additional_file_utils.md"
 slides "09_command_line_ux.md"
-
-#
-# section "Introduction" do
-#   slides "intro.md"
-# end
-#
-# section "Code Samples" do
-#   slides "code_sample.md"
-#   slides "code_samples"
-# end
-#
-# section "Conclusion" do
-#   slides "closing.md"
-# end
-
-# Or if you are interested solely in linking to slides without sections you can
-# use the following:
-#
-# slides "intro.md"
-# slides "code_sample.md"
-# slides "code_samples"
-# slides "closing.md"
-#

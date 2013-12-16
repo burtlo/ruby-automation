@@ -104,7 +104,7 @@ task "hello" do
 end
 
 desc "Says Goodbye"
-task "hello" do
+task "goodbye" do
   puts "goodbye"
 end
 ```

@@ -96,11 +96,11 @@ another_lame_regex = %r{I am a Regular Expression}
 ## Specifying a File Matcher
 
 ```ruby
-all_text_files = %r{/Users/frank/Downloads/.+\.txt}
-all_gif_files = %r{/Users/frank/Downloads/.+\.gif}
-most_jpg_files = %r{/Users/frank/Downloads/.+\.jpg}
-all_png_files = %r{/Users/frank/Downloads/.+\.png}
-all_image_files = %r{/Users/frank/Downloads/.+\.(gif|jpg|png)}
+all_text_files = %r{Downloads/.+\.txt}
+all_gif_files = %r{Downloads/.+\.gif}
+most_jpg_files = %r{Downloads/.+\.jpg}
+all_png_files = %r{Downloads/.+\.png}
+all_image_files = %r{Downloads/.+\.(gif|jpg|png)}
 ```
 !SLIDE title
 
@@ -114,7 +114,7 @@ http://rubular.com
 
 ```ruby
 guard :shell do
-  watch(%r{/Users/frank/Downloads/.+\.txt}) {|m| `rake downloads:txt:copy` }
+  watch(%r{Downloads/.+\.txt}) {|m| `rake downloads:txt:copy` }
 end
 ```
 
