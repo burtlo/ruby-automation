@@ -152,7 +152,7 @@ File.size("FILEPATH")
 
 ```ruby
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
-  puts File.size(txt_File)
+  puts File.size(txt_file)
 end
 ```
 
@@ -164,7 +164,7 @@ But we need to save this data in a hash!
 
 ```ruby
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
-  file_hash = { "name" => txt_file, "size" => File.size(txt_File) }
+  file_hash = { "name" => txt_file, "size" => File.size(txt_file) }
 end
 ```
 
@@ -178,7 +178,7 @@ The data is now in a hash, but now we need to store it in an Array!
 file_data = []
 
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
-  file_hash = { "name" => txt_file, "size" => File.size(txt_File) }
+  file_hash = { "name" => txt_file, "size" => File.size(txt_file) }
   file_data.push(file_hash)
 end
 ```
@@ -381,6 +381,8 @@ end
 
 !SLIDE commandline
 
+## Formatador && Highline
+
 ```
 $ rake downloads:txt:list
   +------------+------+
@@ -390,14 +392,6 @@ $ rake downloads:txt:list
   +------------+------+
   | houses.txt | 24   |
   +------------+------+
-$ rake downloads:txt:show[pets.txt]
-Dog
-Cat
-Iguana
-$ rake downloads:txt:show FILE=pets.txt
-Dog
-Cat
-Iguana
 $ rake downloads:copy[txt] DESTINATION="/Users/frank/Desktop"
 Copying pets.txt to /Users/frank/Desktop
 Copying houses.txt to /Users/frank/Desktop
