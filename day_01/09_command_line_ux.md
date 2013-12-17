@@ -41,7 +41,7 @@ require 'fileutils'
 require 'formatador'
 ```
 
-!SLIDE title
+!SLIDE
 
 ## Sample Output
 
@@ -62,7 +62,7 @@ $ rake -T
 ...
 ```
 
-!SLIDE title
+!SLIDE
 
 ## Table Data
 
@@ -72,7 +72,7 @@ $ rake -T
 
 The following data is an **array of hashes**!
 
-!SLIDE title
+!SLIDE
 
 ## Arrays
 
@@ -84,7 +84,7 @@ The following data is an **array of hashes**!
 Ruby **arrays can contain any types** of values that you want, though they
 usually contain the same type of thing.
 
-!SLIDE title
+!SLIDE
 
 ## Hashes
 
@@ -96,7 +96,7 @@ usually contain the same type of thing.
 Remember, ENV is a hash, we are simply defining a Hash here. When you define
 a Hash you need to **specify the key with the corresponding value**.
 
-!SLIDE title commandline
+!SLIDE commandline
 
 ## Creating a Table With Real Data
 
