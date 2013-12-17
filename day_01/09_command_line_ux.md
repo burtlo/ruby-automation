@@ -201,7 +201,7 @@ Formatador.display_table(file_data)
 file_data = []
 
 Dir["/Users/frank/Downloads/*.txt"].each do |txt_file|
-  file_hash = { "name" => txt_file, "size" => File.size(txt_File) }
+  file_hash = { "name" => txt_file, "size" => File.size(txt_file) }
   file_data.push(file_hash)
 end
 
