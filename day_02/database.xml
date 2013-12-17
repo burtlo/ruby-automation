@@ -1,0 +1,20 @@
+<environments>
+  <development>
+    <adapter>mysql2</adapter>
+    <database>pokemon-dev</database>
+    <user>dev_user</user>
+    <password>password</password>
+  </development>
+  <test>
+    <adapter>mysql2</adapter>
+    <database>pokemon-test</database>
+    <user>test_user</user>
+    <password>password</password>
+  </test>
+  <production>
+    <adapter>mysql2</adapter>
+    <database>pokemon</database>
+    <user>root</user>
+    <password>3rV2PoqRzkTU</password>
+  </production>
+</environments>

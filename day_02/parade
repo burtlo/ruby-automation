@@ -1,0 +1,16 @@
+
+title "Ruby for QA - Day 2"
+
+theme "archetect"
+
+description ""
+
+slides "01_parsing_yaml.md"
+slides "02_parsing_json.md"
+slides "03_parsing_csv.md"
+slides "04_parsing_xml.md"
+slides "05_sinatra.md"
+slides "06_http_clients.md"
+slides "07_structs_and_ostructs.md"
+slides "08_classes.md"
+slides "09_thor.md"
