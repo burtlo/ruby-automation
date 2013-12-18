@@ -28,6 +28,8 @@ $ touch server.rb
 ## Sinatra DSL
 
 ```ruby
+require 'sinatra'
+
 get '/' do
   'Hello World!'
 end

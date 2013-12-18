@@ -158,12 +158,11 @@ puts data["places_lived"][2]
 # Parse JSON File
 
 ```
-$ rake dev:database:json:info
-dev_user connects a mysql2 database named pokemon-dev
-$ rake test:database:json:info
-test_user connects a mysql2 database named pokemon-test
-$ rake prod:database:json:info
-root connects a mysql2 database named pokemon
+$ rspec spec/parsing_json_spec.rb
+............
+
+Finished in 0.00115 seconds
+12 example, 0 failures
 ```
 
 !SLIDE title

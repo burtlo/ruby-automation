@@ -185,13 +185,13 @@ puts data.xpath("person/placesLived/place")[2].text
 # Parse XML File
 
 ```
-$ rake dev:database:xml:info
-dev_user connects a mysql2 database named pokemon-dev
-$ rake test:database:xml:info
-test_user connects a mysql2 database named pokemon-test
-$ rake prod:database:xml:info
-root connects a mysql2 database named pokemon
+$ rspec spec/parsing_xml_spec.rb
+............
+
+Finished in 0.00115 seconds
+12 example, 0 failures
 ```
+
 
 !SLIDE title
 

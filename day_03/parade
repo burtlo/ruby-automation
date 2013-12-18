@@ -1,0 +1,9 @@
+
+title "Ruby for QA - Day 3"
+
+theme "archetect"
+
+description ""
+
+slides "01_rspec.md"
+slides "02_before_and_after.md"

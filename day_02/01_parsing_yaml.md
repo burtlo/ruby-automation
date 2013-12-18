@@ -76,7 +76,7 @@ file_contents = File.read(filename)
 
 ## Parse the Contents
 
-```
+```ruby
 require 'yaml'
 
 file_contents = File.read(filename)
@@ -147,11 +147,11 @@ puts data["places_lived"][2]
 # Parse YAML File
 
 ```
-$ rake dev:database:yml:info
+$ rake dev:db:yml:info
 dev_user connects a mysql2 database named pokemon-dev
-$ rake test:database:yml:info
+$ rake test:db:yml:info
 test_user connects a mysql2 database named pokemon-test
-$ rake prod:database:yml:info
+$ rake prod:db:yml:info
 root connects a mysql2 database named pokemon
 ```
 
