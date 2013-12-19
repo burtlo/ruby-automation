@@ -149,6 +149,8 @@ def matches?(page)
   unless has_log_out_link
     @error_message += "No 'Log out' link "
   end
+
+  has_logged_in_text and has_account_profile_link and has_log_out_link
 end
 ```
 
