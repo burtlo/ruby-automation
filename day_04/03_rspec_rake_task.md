@@ -33,7 +33,7 @@ end
 
 ## Lots of Gems Have a Rake Task
 
-```
+```ruby
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new
@@ -67,11 +67,19 @@ $ rake spec:features
 ```ruby
 require 'rspec/core/rake_task'
 
+RSpec::Core::RakeTask.new
+
+RSpec::Core::RakeTask.new "spec:features" do |task|
+  task.pattern = "spec/features/**/*_spec.rb"
+  task.rspec_opts = "-f p"
+end
+
 RSpec::Core::RakeTask.new "spec:ci" do |task|
   task.pattern = "spec/**/*_spec.rb"
   task.rspec_opts = "-f h -o test_results.html"
 end
 ```
+!SLIDE title
 
 # Goal
 

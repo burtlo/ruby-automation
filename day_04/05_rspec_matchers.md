@@ -35,7 +35,7 @@ But the error failed expectation would not give us much information
 expect(false).to(be(true),"Custom Error Message")
 ```
 
-!SLIDE title
+!SLIDE
 
 ## Crafting My Own Error
 
@@ -44,23 +44,31 @@ has_logged_in_text = page.has_text?("Logged in as")
 has_account_profile_link = page.has_link?("Account Profile")
 has_log_out_link = page.has_link?("Log out")
 
+error_message = ""
+
 unless has_logged_in_text
-  error_message = "'Missing Logged in as ...' text "
+  error_message += "'Missing Logged in as ...' text "
 end
 
 unless has_account_profile_link
-  error_message = "No 'Account Profile' link "
+  error_message += "No 'Account Profile' link "
 end
 
 unless has_log_out_link
-  error_message = "No 'Log out' link "
+  error_message += "No 'Log out' link "
 end
+```
+
+!SLIDE
+
+```ruby
 
 result = has_logged_in_text and
          has_account_profile_link and
          has_log_out_link
 
-expect(false).to(be(true),error_message)
+expect(result).to(be(true),error_message)
+
 ```
 
 !SLIDE title
@@ -69,6 +77,87 @@ expect(false).to(be(true),error_message)
 
 ```
 expect(page).to have_a_logged_in_nav_bar
+```
+
+!SLIDE
+
+## Define the Method
+
+```ruby
+def have_a_logged_in_nav_bar
+  # What Do I Return?
+end
+```
+
+!SLIDE
+
+## Define a New Instance
+
+```ruby
+def have_a_logged_in_nav_bar
+  LoggedInNavBar.new
+end
+```
+
+!SLIDE
+
+## Define the Matcher Class
+
+```ruby
+def have_a_logged_in_nav_bar
+  LoggedInNavBar.new
+end
+
+class LoggedInNavBar
+  def matches?(page)
+    # CHECK PAGE FOR THINGS HERE
+    # return true if all things are there
+    # return false if something is not there
+    return true
+  end
+
+  def failure_message_for_should
+    "It is missing all those things you want Sorry!"
+  end
+
+  def failure_message_for_should_not
+    "It has all those things you don't want it to have! Sorry!"
+  end
+end
+```
+
+!SLIDE
+
+## matches?
+
+```ruby
+def matches?(page)
+  has_logged_in_text = page.has_text?("Logged in as")
+  has_account_profile_link = page.has_link?("Account Profile")
+  has_log_out_link = page.has_link?("Log out")
+
+  @error_message = ""
+
+  unless has_logged_in_text
+    @error_message += "'Missing Logged in as ...' text "
+  end
+
+  unless has_account_profile_link
+    @error_message += "No 'Account Profile' link "
+  end
+
+  unless has_log_out_link
+    @error_message += "No 'Log out' link "
+  end
+end
+```
+
+!SLIDE
+
+```ruby
+def failure_message_for_should
+  @error_message
+end
 ```
 
 !SLIDE title

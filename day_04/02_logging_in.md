@@ -111,7 +111,7 @@ end
 
 The form has the id `login-form`.
 
-!SLIDE title
+!SLIDE
 
 ## Using `within`
 
@@ -129,6 +129,7 @@ end
 
 !SLIDE
 
+## Using `within`
 
 ```ruby
 require 'spec_helper'
@@ -191,7 +192,10 @@ end
 
 !SLIDE
 
-## Alternative
+## Alternative Solution
+
+There are many ways to find elements, `pry` allows
+us to experiment within our specs.
 
 ```ruby
 it "am able to login" do

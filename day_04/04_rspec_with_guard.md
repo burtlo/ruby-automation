@@ -53,6 +53,8 @@ $ guard
 
 That prompt that guard gives you is actually pry.
 
+!SLIDE title
+
 # Goal (optional)
 
 !SLIDE commandline
