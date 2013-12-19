@@ -13,7 +13,7 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 ```
 { "name": "franklin",
   "age": 36,
-  "city": Denver }
+  "city": "Denver" }
 ```
 
 !SLIDE title
@@ -31,10 +31,10 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 ## A Little More JSON
 
 ```
-{ "name": "franklin"
+{ "name": "franklin",
   "favorites":
   {
-    "rake_task": "db:test:prepare"
+    "rake_task": "db:test:prepare",
     "color": "blue"
   }
 }
@@ -45,7 +45,7 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 ## Last Bit of JSON
 
 ```
-{ "name": "franklin"
+{ "name": "franklin",
   "places_lived":
   [
     "Los Angeles, CA",

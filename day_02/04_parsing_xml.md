@@ -134,7 +134,7 @@ puts data.xpath("person/age").text
 puts data.xpath("person/city").text
 ```
 
-!SLIDE title
+!SLIDE
 
 ## What Does the Data Look Like?
 
@@ -154,7 +154,7 @@ puts data.xpath("person/favorites/color").text
 puts data.xpath("person/favorites/rakeTask").text
 ```
 
-!SLIDE title
+!SLIDE
 
 ## What Does the Data Look Like?
 

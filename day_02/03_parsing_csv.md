@@ -96,7 +96,7 @@ puts data[1][2]
 data = CSV.read("name.csv",:headers => true)
 puts data
 # #<CSV::Table mode:col_or_row row_count:2>
-puts data[0]['name']
+puts data[1]['name']
 puts data[1]['age']
 puts data[1]['city']
 ```

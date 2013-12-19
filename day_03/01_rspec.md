@@ -3,10 +3,13 @@
 # RSpec
 Behavior Driven Development
 
-!SLIDE title
+!SLIDE center
 
 **BDD** is an approach to software development that **combines Test-Driven
 Development, Domain Driven Design**, and **Acceptance Test-Driven Planning**.
+
+!SLIDE center
+
 RSpec **helps you do the TDD part of that equation**, focusing on the
 documentation and design aspects of TDD.
 
@@ -22,7 +25,7 @@ $ gem install rspec
 gem 'rspec'
 ```
 
-!SLIDE commandline
+!SLIDE title commandline
 
 ## Running RSpec
 
@@ -96,6 +99,8 @@ end
 ```ruby
 result.should(eq(2))
 ```
+
+!SLIDE title
 
 # Goal
 

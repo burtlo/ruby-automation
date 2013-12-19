@@ -1,0 +1,11 @@
+
+title "Ruby for QA - Day 4"
+
+theme "archetect"
+
+description ""
+
+slides "01_capybara.md"
+slides "02_logging_in.md"
+slides "03_rspec_matchers.md"
+slides "04_purchase.md"
