@@ -168,3 +168,7 @@ Testing local code is relatively easy, let’s move on to the web. We’ll use t
 * Ruby - Optional Parameters, Named Parameters, Splats, Monkey Patching
 * Ruby - Block Initializers, instance_eval, instance_exec
 * Domain Specific Languages
+
+### Windows Resources
+
+* https://github.com/adoxa/ansicon

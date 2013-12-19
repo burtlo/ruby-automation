@@ -1,6 +1,7 @@
 !SLIDE title
 
 # Capybara
+A Ruby DSL for Web Testing
 
 !SLIDE title
 
@@ -12,6 +13,8 @@ gem "selenium-webdriver", "~> 2.34.0"
 ```
 
 !SLIDE title commandline
+
+## Install Dependencies
 
 ```
 $ bundle install
@@ -38,7 +41,7 @@ RSpec.configure do |config|
 end
 ```
 
-!SLIDE title
+!SLIDE
 
 ## spec/features/visit_spec.rb
 
@@ -48,8 +51,8 @@ require 'spec_helper'
 describe "Visit the Webpage" do
 
   it "view the index page" do
-    visit "/"
-    expect(page).to have_link("Sign up or Log in")
+    visit("/")
+    expect(page).to(have_link("Sign up or Log in"))
   end
 end
 ```

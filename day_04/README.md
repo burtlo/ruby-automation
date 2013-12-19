@@ -16,3 +16,4 @@ Capybara library to connect RSpec to a virtual web browser.
 * https://relishapp.com/rspec/rspec-expectations/v/3-0/docs/custom-matchers/define-matcher
 * http://rubydoc.info/gems/capybara/frames
 * https://github.com/mattheworiordan/capybara-screenshot
+* http://pryrepl.org/

@@ -7,6 +7,8 @@
 ## spec/features/login_spec.rb
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
@@ -19,6 +21,8 @@ end
 ## spec/features/login_spec.rb
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
@@ -32,6 +36,8 @@ end
 ## spec/features/login_spec.rb
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
@@ -47,6 +53,8 @@ end
 ## spec/features/login_spec.rb
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
@@ -74,11 +82,13 @@ end
 
 ## Walk through the page manually
 
-!SLIDE title
+!SLIDE
 
 ## save_and_open_page
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
@@ -97,6 +107,49 @@ end
 
 !SLIDE title
 
+## Looking Within the Form
+
+The form has the id `login-form`.
+
+!SLIDE title
+
+## Using `within`
+
+Within uses CSS Selectors to specify scoping. '#' prefix to represent id values. '.' prefix to represent class values.
+
+```ruby
+within "#element-id" do
+  # ... click things ...
+end
+
+within ".element-class" do
+  # .... click things ...
+end
+```
+
+!SLIDE
+
+
+```ruby
+require 'spec_helper'
+
+describe "User Login" do
+  it "am able to login" do
+    visit "/"
+    click_link "Sign up or Log in"
+
+    within "#login-form" do
+      fill_in "Email", with: "demo+franklin@jumpstartlab.com"
+      fill_in "Password", with: "password"
+      click_button "Log In"
+    end
+
+  end
+end
+``
+
+!SLIDE title
+
 ## Debugging with `pry`
 
 !SLIDE title
@@ -111,20 +164,24 @@ gem 'pry'
 
 ## Update spec_helper.rb
 
-```
+```ruby
 require 'pry'
 ```
 
-!SLIDE title
+!SLIDE
 
 ## binding.pry
 
 ```ruby
+require 'spec_helper'
+
 describe "User Login" do
   it "able to login" do
     visit "/"
     click_link "Sign up or Log in"
+
     binding.pry
+
     fill_in "Email", with: "demo+franklin@jumpstartlab.com"
     fill_in "Password", with: "password"
     click_button "Log In"
@@ -134,22 +191,28 @@ end
 
 !SLIDE
 
-## within
+## Alternative
 
 ```ruby
 it "am able to login" do
   visit "/"
   click_link "Sign up or Log in"
-  within "#login-form" do
-    fill_in "Email", with: "demo+franklin@jumpstartlab.com"
-    fill_in "Password", with: "password"
-    click_button "Log In"
-  end
-
-  expect(page).to have_text("Logged in as")
-  expect(page).to have_link("Account Profile")
-  expect(page).to have_link("Log Out")
+  fill_in "email", with: "demo+franklin@jumpstartlab.com"
+  fill_in "password", with: "password"
+  click_button "Log In"
 end
+```
+
+!SLIDE title
+
+## Did Everything Work?
+
+We need to make assertions...
+
+```ruby
+expect(page).to have_text("Logged in as")
+expect(page).to have_link("Account Profile")
+expect(page).to have_link("Log out")
 ```
 
 !SLIDE title
